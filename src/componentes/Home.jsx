@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div className="home">
       <div className="header-linea"></div>
-      <div className="header">
+      <div className="div-video">
         <video
           src={video1}
           controls

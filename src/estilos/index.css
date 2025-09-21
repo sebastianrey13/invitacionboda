@@ -14,8 +14,7 @@
   align-items: center;
 }
 
-.header {
-  position: relative;
+.div-video {
   width: 100%;
   max-width: 982px;
   height: 100vh;
@@ -27,23 +26,23 @@
   align-items: center;
 }
 
-.header video {
-  width: 90%;
+.div-video video {
+  position: relative;
+  width: 100%;
   height: 100%;
-  object-fit: cover;
+  top: -110px;
 }
 
 .header-linea {
   width: 100%;
   background-color: #3f5876;
   height: 20px;
-  margin-bottom: 5px;
 }
 
 .header-image1 {
   width: 100%;
   max-width: 982px;
   height: 100%;
-  margin-top: -80px;
+  margin-top: -250px;
   z-index: 1;
 }
