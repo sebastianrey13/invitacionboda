@@ -1,5 +1,5 @@
 import React from "react";
-import video1 from "../../public/videoPagina1.mp4";
+import video1 from "../../public/matrimonioVideo1.mp4";
 import image1 from "../../public/image1.png";
 
 const Home = () => {

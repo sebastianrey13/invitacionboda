@@ -42,7 +42,6 @@
 .header-image1 {
   width: 100%;
   max-width: 982px;
-  height: 100%;
-  margin-top: -250px;
+  margin-top: -140px;
   z-index: 1;
 }
