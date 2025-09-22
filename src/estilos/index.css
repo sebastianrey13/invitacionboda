@@ -3,7 +3,12 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  font-family: 'Questrial', sans-serif;
   font-style: normal;
+}
+
+a {
+  text-decoration: none;
 }
 
 .home {
@@ -42,6 +47,168 @@
 .header-image1 {
   width: 100%;
   max-width: 982px;
-  margin-top: -140px;
+  margin-top: -180px;
   z-index: 1;
+}
+
+.cardInfo {
+  width: 340px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 1px 6px 18px rgba(21, 35, 51, 0.5);
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  /* Estado inicial (oculto y desplazado) */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+/* Cuando aparece en pantalla */
+.cardInfo.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cardInfo h2 {
+  color: #3f5876;
+}
+
+.cardInfo-poema {
+  font-size: 2.5rem;
+  font-family: "Dancing Script";
+}
+
+.poem {
+  font-family: "Dancing Script";
+  line-height: 1.6;
+  color: #444;
+  white-space: pre-line;
+  padding: 0 8px;
+}
+
+.cardInfo-hora {
+  font-size: 1.8rem;
+  font-family: "Lobster", cursive;
+  font-weight: 100;
+}
+
+.imgIglesia {
+  width: 200px;
+  margin-top: 20px;
+}
+
+.imgCopas {
+  width: 150px;
+  margin-top: 20px;
+}
+
+.cardInfo-direccion p {
+  margin-bottom: 5px;
+  color: #757575;
+  font-size: 18px;
+}
+
+.cardInfo-horaCeremonia {
+  color: #757575;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.comoLlegar {
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #597c9e;
+  border: 1px solid #ceb191;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.mensaje {
+  font-size: 25px;
+}
+.mensaje5 {
+  font-size: 70px;
+  margin-bottom: -60px;
+}
+
+.countdown {
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  margin-top: 40px;
+}
+
+.countdown-label {
+  letter-spacing: 8px;
+  color: #3f5876;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.4rem;
+}
+
+.time-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 45px;
+}
+
+.time-value {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+.separator {
+  font-size: 1.6rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.time-box small {
+  font-size: 0.8rem;
+  color: #555;
+  margin-top: 4px;
+}
+
+
+.dressCodeText{
+  color: #868686;
+  font-size: 20px;
+}
+
+.confirmarVisita{
+  width: 100%;
+  background-color: #6785a8;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.confirmarVisita h3{
+  font-size: 25px;
+}
+
+.botonConfirmar{
+  background-color: #395472;
+  padding: 10px 25px;
+  border-radius: 10px;
 }
