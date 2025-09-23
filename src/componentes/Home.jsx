@@ -4,6 +4,7 @@ import video1 from "../../public/matrimonioVideo1.mp4";
 import image1 from "../../public/image1.png";
 import imageIglesia from "../../public/iglesia.png";
 import imageCopas from "../../public/copas.png";
+import avanceGif from "../../public/avance.gif";
 import imageDressCode from "../../public/dressCode.png";
 import Countdown from "./Countdown.jsx";
 
@@ -19,7 +20,7 @@ const Home = () => {
           }
         });
       },
-      { threshold: 0.15 } // activa cuando el 20% de la card sea visible
+      { threshold: 0.10 } // activa cuando el 10% de la card sea visible
     );
 
     cards.forEach((card) => observer.observe(card));
@@ -33,8 +34,10 @@ const Home = () => {
       {/* Video */}
       <div className="div-video">
         <video src={video1} controls playsInline />
+        <img className="gif" src={avanceGif}/>
       </div>
       {/* seccion 1, nos casamos */}
+      
       <img className="header-image1" src={image1} alt="" />
       <div className="cardInfo">
         <h2 className="cardInfo-poema">¡Nos Casamos!</h2>
@@ -120,15 +123,19 @@ const Home = () => {
       <div className="cardInfo">
         <h2 className="cardInfo-poema">Dress Code</h2>
         <img className="imgIglesia" src={imageDressCode} alt="" />
-        <p className="dressCodeText">
-          El brillo y el encanto de cada uno será el mejor adorno para acompañar
-          nuestra celebración
-        </p>
-        <p className="dressCodeText">
-          Queremos que la magia de este día se vista de elegancia. Pedimos a
-          nuestras invitadas dejar el blanco reservado para la novia, y a
-          nuestros caballeros evitar el gris en sus trajes.
-        </p>
+        <div>
+          <p className="dressCodeEtiqueta">Etiqueta formal</p>
+          <div className="dressCode">
+            <div>
+              <p className="dressCodeMH">Mujeres</p>
+              <p className="dressCodeText">Reservarse el blanco</p>
+            </div>
+            <div>
+              <p className="dressCodeMH">Hombres</p>
+              <p className="dressCodeText">Reservarse el gris</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* seccion 7, confirmar visita  */}
