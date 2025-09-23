@@ -12,11 +12,13 @@ a {
 }
 
 .home {
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin: auto;
 }
 
 .div-video {
@@ -110,6 +112,7 @@ a {
   color: #444;
   white-space: pre-line;
   padding: 0 8px;
+  font-size: 20px;
 }
 
 .cardInfo-hora {
