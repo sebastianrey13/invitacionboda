@@ -4,7 +4,7 @@ import video1 from "../../public/matrimonioVideo1.mp4";
 import image1 from "../../public/image1.png";
 import imageIglesia from "../../public/iglesia.png";
 import imageCopas from "../../public/copas.png";
-import avanceGif from "../../public/avance.gif";
+import flecha from "../../public/flecha-circulo-izquierda.png";
 import imageDressCode from "../../public/dressCode.png";
 import Countdown from "./Countdown.jsx";
 import CalendarButton from "./CalendarButton.jsx"
@@ -35,7 +35,7 @@ const Home = () => {
       {/* Video */}
       <div className="div-video">
         <video src={video1} controls playsInline />
-        <img className="gif" src={avanceGif}/>
+        <img className="gif" src={flecha}/>
       </div>
       {/* seccion 1, nos casamos */}
       
