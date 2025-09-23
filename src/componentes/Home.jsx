@@ -7,6 +7,7 @@ import imageCopas from "../../public/copas.png";
 import avanceGif from "../../public/avance.gif";
 import imageDressCode from "../../public/dressCode.png";
 import Countdown from "./Countdown.jsx";
+import CalendarButton from "./CalendarButton.jsx"
 
 const Home = () => {
   useEffect(() => {
@@ -58,6 +59,7 @@ const Home = () => {
       <div className="cardInfo">
         <h2 className="cardInfo-hora">1 de Noviembre, 2025</h2>
         <Countdown />
+        <CalendarButton/>
       </div>
 
       {/* seccion 3, ceremonia  */}
