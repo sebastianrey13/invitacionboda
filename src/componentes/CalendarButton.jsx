@@ -10,15 +10,16 @@ Piedecuesta, Santander
 
 03:00 PM`;
 
+  const location =
+    "Zafar salon de eventos, Zafar eventos, Auto. Floridablanca - Piedecuesta #Km 10, Piedecuesta, La Parcela, Piedecuesta, Santander, Colombia";
+
   const googleCalendarUrl =
     "https://calendar.google.com/calendar/render" +
     "?action=TEMPLATE" +
-    "&text=Matrimonio+Sebastian+y+Jessica" +
+    "&text=" + encodeURIComponent("Matrimonio Sebastian y Jessica") +
     "&dates=20251101T200000Z/20251102T070000Z" +
-    "&details=" +
-    encodeURIComponent(details) +
-    "&location=" +
-    encodeURIComponent("https://maps.app.goo.gl/QdTKbAiPitVPYaDt9");
+    "&details=" + encodeURIComponent(details) +
+    "&location=" + encodeURIComponent(location);
 
   return (
     <a
@@ -27,7 +28,7 @@ Piedecuesta, Santander
       rel="noopener noreferrer"
       className="calendar-button"
     >
-      Agregar a Google Calendar
+      Agregar al Google Calendar
     </a>
   );
 }

@@ -55,7 +55,7 @@ a {
   width: 50px;
   transform: rotate(90deg);
   position: absolute;
-  bottom: 200px;
+  bottom: 100px;
   z-index: 12;
 }
 
