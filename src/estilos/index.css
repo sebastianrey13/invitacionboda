@@ -51,14 +51,25 @@ a {
   z-index: 1;
 }
 
-.gif{
+.gif {
   width: 50px;
-  transform: rotate(90deg);
   position: absolute;
-  bottom: 100px;
+  bottom: 120px;
   z-index: 12;
+  animation: moverY 2s ease-in-out infinite;
 }
 
+@keyframes moverY {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px); /* Sube 20px */
+  }
+  100% {
+    transform: translateY(0); /* Vuelve a su lugar */
+  }
+}
 .cardInfo {
   width: 340px;
   padding: 28px 24px;
