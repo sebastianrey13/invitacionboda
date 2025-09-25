@@ -28,7 +28,7 @@ Piedecuesta, Santander
       rel="noopener noreferrer"
       className="calendar-button"
     >
-      Agregar al Google Calendar
+      Agregar a Google Calendar
     </a>
   );
 }

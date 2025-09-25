@@ -7,7 +7,9 @@ import imageCopas from "../../public/copas.png";
 import flecha from "../../public/flecha-circulo-izquierda.png";
 import imageDressCode from "../../public/dressCode.png";
 import Countdown from "./Countdown.jsx";
-import CalendarButton from "./CalendarButton.jsx"
+import CalendarButton from "./CalendarButton.jsx";
+import Popup from "./Popup.jsx";
+import Swal from "sweetalert2";
 
 const Home = () => {
   useEffect(() => {
@@ -21,7 +23,7 @@ const Home = () => {
           }
         });
       },
-      { threshold: 0.10 } // activa cuando el 10% de la card sea visible
+      { threshold: 0.1 } // activa cuando el 10% de la card sea visible
     );
 
     cards.forEach((card) => observer.observe(card));
@@ -29,16 +31,51 @@ const Home = () => {
     return () => observer.disconnect();
   }, []);
 
+  /* Confirmar asistencia */
+
+  const mensaje = "¡Confirmo mi asistencia! 🎉";
+
+  const confirmarAsistencia = () => {
+    Swal.fire({
+      title: "¿Confirmas tu asistencia?",
+      showDenyButton: true,
+      confirmButtonText: "Sí",
+      denyButtonText: "No",
+      customClass: {
+        confirmButton: "btn-confirm",
+        denyButton: "btn-deny",
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "¡Gracias por confirmar!", // ✅
+          text: "En unos segundos se abrirá WhatsApp para que me confirmes el número de personas 🎉",
+          icon: "success",
+          showConfirmButton: false, // 👈 sin botón extra
+          timer: 2000, // ⏳ espera 2s (puedes poner 3000 o más)
+          timerProgressBar: true, // 👀 barra de tiempo
+        }).then(() => {
+          window.open(
+            `https://wa.me/573043105329?text=${encodeURIComponent(mensaje)}`,
+            "_blank"
+          );
+        });
+      } else if (result.isDenied) {
+        Swal.fire("No asistirás", "", "info"); // 🚫
+      }
+    });
+  };
+
   return (
     <div className="home">
       <div className="header-linea"></div>
       {/* Video */}
       <div className="div-video">
         <video src={video1} controls playsInline />
-        <img className="gif" src={flecha}/>
+        <img className="gif" src={flecha} />
       </div>
       {/* seccion 1, nos casamos */}
-      
+
       <img className="header-image1" src={image1} alt="" />
       <div className="cardInfo">
         <h2 className="cardInfo-poema">¡Nos Casamos!</h2>
@@ -59,7 +96,7 @@ const Home = () => {
       <div className="cardInfo">
         <h2 className="cardInfo-hora">1 de Noviembre, 2025</h2>
         <Countdown />
-        <CalendarButton/>
+        <CalendarButton />
       </div>
 
       {/* seccion 3, ceremonia  */}
@@ -144,7 +181,9 @@ const Home = () => {
 
       <div className="confirmarVisita">
         <h3>Confirma tu asistencia</h3>
-        <p className="botonConfirmar">Confirmar</p>
+        <p className="botonConfirmar" onClick={confirmarAsistencia}>
+          Confirmar
+        </p>
       </div>
     </div>
   );

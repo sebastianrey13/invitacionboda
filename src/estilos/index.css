@@ -266,3 +266,27 @@ a {
   padding: 10px 25px;
   border-radius: 10px;
 }
+
+/* Popup */
+
+.btn-confirm {
+  background-color: #22c55e !important; /* Verde */
+  color: white !important;
+  border-radius: 8px !important;
+  padding: 8px 16px !important;
+}
+
+.btn-confirm:hover {
+  background-color: #16a34a !important; /* Verde más oscuro */
+}
+
+.btn-deny {
+  background-color: #ef4444 !important; /* Rojo */
+  color: white !important;
+  border-radius: 8px !important;
+  padding: 8px 16px !important;
+}
+
+.btn-deny:hover {
+  background-color: #dc2626 !important;
+}
