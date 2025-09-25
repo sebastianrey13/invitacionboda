@@ -31,7 +31,7 @@ const Home = ({ nombre }) => {
   /* --- Configuración de invitados --- */
   const grupos = {
     grupo1: ["Libardo", "Mayuly", "Luis", "Eduardo", "Angela", "Gloria", "Carolina", "Maria", "Alejandra", "Esteban", "Milena"],
-    grupo2: ["Doris", "Erica", "Sofia", "Yuly", "Rosalba", "Cristian", "Claudia", "Hermanas", "Danny", "William", "Robsinson", "Edgar", "Lilibeth", "Erickson", "Daniel"],
+    grupo2: ["Doris", "Erica", "Sofia", "Yuly", "Rosalba", "Cristian", "Claudia", "Hermanas", "Danny", "William", "Robinson", "Edgar", "Lilibeth", "Erickson", "Daniel"],
   };
 
   // Normalizamos el nombre para evitar errores con mayúsculas/minúsculas
