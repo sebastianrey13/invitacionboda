@@ -45,7 +45,7 @@ const Home = ({ nombre }) => {
     numeroWhatsApp = "573152236666";
   }
 
-  const mensaje = `¡Hola ${nombreInvitado}! Confirmo mi asistencia 🎉`;
+  const mensaje = `¡Hola! Confirmo mi asistencia 🎉`;
 
   const confirmarAsistencia = () => {
     Swal.fire({
@@ -60,7 +60,7 @@ const Home = ({ nombre }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire({
-          title: "¡Gracias por confirmar!",
+          title: `¡${nombreInvitado} gracias por confirmar!`,
           text: "En unos segundos se abrirá WhatsApp para que me confirmes el número de personas 🎉",
           icon: "success",
           showConfirmButton: false,
