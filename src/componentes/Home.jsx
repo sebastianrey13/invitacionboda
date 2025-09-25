@@ -21,16 +21,30 @@ const Home = ({ nombre }) => {
           }
         });
       },
-      { threshold: 0.1 } // activa cuando el 10% de la card sea visible
+      { threshold: 0.1 }
     );
 
     cards.forEach((card) => observer.observe(card));
-
     return () => observer.disconnect();
   }, []);
 
-  /* Confirmar asistencia */
-  const nombreInvitado = nombre || "";
+  /* --- Configuración de invitados --- */
+  const grupos = {
+    grupo1: ["Libardo", "Mayuly", "Luis", "Eduardo", "Angela", "Gloria", "Carolina", "Maria", "Alejandra", "Esteban", "Milena"],
+    grupo2: ["Doris", "Erica", "Sofia", "Yuly", "Rosalba", "Cristian", "Claudia", "Hermanas", "Danny", "William", "Robsinson", "Edgar", "Lilibeth", "Erickson", "Daniel"],
+  };
+
+  // Normalizamos el nombre para evitar errores con mayúsculas/minúsculas
+  const nombreInvitado = nombre?.trim() || "";
+  const nombreNormalizado = nombreInvitado.toLowerCase();
+
+  let numeroWhatsApp = "573152236666"; // ✅ número por defecto
+  if (grupos.grupo1.map(n => n.toLowerCase()).includes(nombreNormalizado)) {
+    numeroWhatsApp = "573187502170";
+  } else if (grupos.grupo2.map(n => n.toLowerCase()).includes(nombreNormalizado)) {
+    numeroWhatsApp = "573152236666";
+  }
+
   const mensaje = `¡Hola ${nombreInvitado}! Confirmo mi asistencia 🎉`;
 
   const confirmarAsistencia = () => {
@@ -54,12 +68,12 @@ const Home = ({ nombre }) => {
           timerProgressBar: true,
         }).then(() => {
           window.open(
-            `https://wa.me/573043105329?text=${encodeURIComponent(mensaje)}`,
+            `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`,
             "_blank"
           );
         });
       } else if (result.isDenied) {
-        Swal.fire(`${nombreInvitado}, sentimos que no puedas asistir`, "", "info");
+        Swal.fire(`${nombreInvitado}, sentimos que no puedas asistir 😔`, "", "info");
       }
     });
   };
