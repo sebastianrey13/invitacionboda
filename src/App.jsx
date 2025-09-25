@@ -1,14 +1,10 @@
-import Home from './componentes/Home.jsx'
-import Footer from './componentes/Footer.jsx'
+import Home from "./componentes/Home.jsx";
 
 function App() {
+  const searchParams = new URLSearchParams(window.location.search);
+  const nombre = searchParams.get("nombre") || "";
 
-  return (
-    <>
-    <Home/>
-    <Footer/>
-    </>
-  )
+  return <Home nombre={nombre} />;
 }
 
-export default App
+export default App;

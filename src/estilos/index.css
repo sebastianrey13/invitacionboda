@@ -91,6 +91,12 @@ a {
   transition: all 0.8s ease-out;
 }
 
+.saludoInicial {
+  margin-bottom: 5px;
+  color: #757575;
+  font-size: 18px;
+}
+
 /* Cuando aparece en pantalla */
 .cardInfo.show {
   opacity: 1;

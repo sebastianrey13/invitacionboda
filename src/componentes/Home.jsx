@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import video1 from "../../public/matrimonioVideo1.mp4";
 import image1 from "../../public/image1.png";
 import imageIglesia from "../../public/iglesia.png";
@@ -8,10 +7,9 @@ import flecha from "../../public/flecha-circulo-izquierda.png";
 import imageDressCode from "../../public/dressCode.png";
 import Countdown from "./Countdown.jsx";
 import CalendarButton from "./CalendarButton.jsx";
-import Popup from "./Popup.jsx";
 import Swal from "sweetalert2";
 
-const Home = () => {
+const Home = ({ nombre }) => {
   useEffect(() => {
     const cards = document.querySelectorAll(".cardInfo");
 
@@ -32,12 +30,12 @@ const Home = () => {
   }, []);
 
   /* Confirmar asistencia */
-
-  const mensaje = "¡Confirmo mi asistencia! 🎉";
+  const nombreInvitado = nombre || "";
+  const mensaje = `¡Hola ${nombreInvitado}! Confirmo mi asistencia 🎉`;
 
   const confirmarAsistencia = () => {
     Swal.fire({
-      title: "¿Confirmas tu asistencia?",
+      title: `¿Confirmas tu asistencia, ${nombreInvitado}?`,
       showDenyButton: true,
       confirmButtonText: "Sí",
       denyButtonText: "No",
@@ -48,12 +46,12 @@ const Home = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire({
-          title: "¡Gracias por confirmar!", // ✅
+          title: "¡Gracias por confirmar!",
           text: "En unos segundos se abrirá WhatsApp para que me confirmes el número de personas 🎉",
           icon: "success",
-          showConfirmButton: false, // 👈 sin botón extra
-          timer: 2000, // ⏳ espera 2s (puedes poner 3000 o más)
-          timerProgressBar: true, // 👀 barra de tiempo
+          showConfirmButton: false,
+          timer: 2000,
+          timerProgressBar: true,
         }).then(() => {
           window.open(
             `https://wa.me/573043105329?text=${encodeURIComponent(mensaje)}`,
@@ -61,7 +59,7 @@ const Home = () => {
           );
         });
       } else if (result.isDenied) {
-        Swal.fire("No asistirás", "", "info"); // 🚫
+        Swal.fire(`${nombreInvitado}, sentimos que no puedas asistir`, "", "info");
       }
     });
   };
@@ -69,14 +67,22 @@ const Home = () => {
   return (
     <div className="home">
       <div className="header-linea"></div>
+
       {/* Video */}
       <div className="div-video">
         <video src={video1} controls playsInline />
         <img className="gif" src={flecha} />
       </div>
-      {/* seccion 1, nos casamos */}
 
       <img className="header-image1" src={image1} alt="" />
+
+      {/* 👇 Mensaje personalizado en portada */}
+      <div className="cardInfo">
+        <h2 className="cardInfo-poema">Hola {nombreInvitado}</h2>
+        <p className="saludoInicial">Estamos felices de invitarte a nuestro matrimonio.</p>
+      </div>
+
+      {/* seccion 1, nos casamos */}
       <div className="cardInfo">
         <h2 className="cardInfo-poema">¡Nos Casamos!</h2>
         <p className="poem">
@@ -92,15 +98,13 @@ const Home = () => {
       </div>
 
       {/* seccion 2, fecha y hora */}
-
       <div className="cardInfo">
         <h2 className="cardInfo-hora">1 de Noviembre, 2025</h2>
         <Countdown />
         <CalendarButton />
       </div>
 
-      {/* seccion 3, ceremonia  */}
-
+      {/* seccion 3, ceremonia */}
       <div className="cardInfo">
         <h2 className="cardInfo-poema">Ceremonia</h2>
         <img className="imgIglesia" src={imageIglesia} alt="" />
@@ -120,8 +124,7 @@ const Home = () => {
         </a>
       </div>
 
-      {/* seccion 4, recepcion  */}
-
+      {/* seccion 4, recepcion */}
       <div className="cardInfo">
         <h2 className="cardInfo-poema">Recepción</h2>
         <img className="imgCopas" src={imageCopas} alt="" />
@@ -141,8 +144,7 @@ const Home = () => {
         </a>
       </div>
 
-      {/* seccion 5, mensaje  */}
-
+      {/* seccion 5, mensaje */}
       <div className="cardInfo">
         <p className="poem mensaje5">""</p>
         <p className="poem mensaje">
@@ -157,8 +159,7 @@ const Home = () => {
         </p>
       </div>
 
-      {/* seccion 6, dressCode  */}
-
+      {/* seccion 6, dressCode */}
       <div className="cardInfo">
         <h2 className="cardInfo-poema">Dress Code</h2>
         <img className="imgIglesia" src={imageDressCode} alt="" />
@@ -177,8 +178,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* seccion 7, confirmar visita  */}
-
+      {/* seccion 7, confirmar visita */}
       <div className="confirmarVisita">
         <h3>Confirma tu asistencia</h3>
         <p className="botonConfirmar" onClick={confirmarAsistencia}>
