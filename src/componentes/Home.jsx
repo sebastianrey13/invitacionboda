@@ -30,7 +30,7 @@ const Home = ({ nombre }) => {
 
   /* --- Configuración de invitados --- */
   const grupos = {
-    grupo1: ["Libardo", "Mayuly", "Luis", "Eduardo", "Angela", "Gloria", "Carolina", "Maria", "Alejandra", "Esteban", "Milena"],
+    grupo1: ["Libardo", "Mayuly", "Luis", "Eduardo", "Angela", "Gloria", "Carolina", "Maria", "Alejandra", "Esteban", "Milena", "Valenttina", "Sebasttian", "Bryam", "Lucero", "Ronald"],
     grupo2: ["Doris", "Erica", "Sofia", "Yuly", "Rosalba", "Cristian", "Claudia", "Hermanas", "Danny", "William", "Robinson", "Edgar", "Lilibeth", "Erickson", "Daniel"],
   };
 
