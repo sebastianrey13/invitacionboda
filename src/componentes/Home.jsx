@@ -191,6 +191,7 @@ const Home = ({ nombre }) => {
             </div>
           </div>
         </div>
+        <p className="dressCodeP">El color blanco está reservado para los novios</p>
       </div>
 
        {/* seccion 7, lluvia de sobres */}
