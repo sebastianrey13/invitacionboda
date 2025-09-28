@@ -3,6 +3,7 @@ import video1 from "../../public/matrimonioVideo1.mp4";
 import image1 from "../../public/image1.png";
 import imageIglesia from "../../public/iglesia.png";
 import imageCopas from "../../public/copas.png";
+import imageRegalo from "../../public/tarjeta-de-regalo.png";
 import flecha from "../../public/flecha-circulo-izquierda.png";
 import imageDressCode from "../../public/dressCode.png";
 import Countdown from "./Countdown.jsx";
@@ -186,13 +187,22 @@ const Home = ({ nombre }) => {
             </div>
             <div>
               <p className="dressCodeMH">Hombres</p>
-              <p className="dressCodeText">Reservarse el gris</p>
+              <p className="dressCodeText">Reservarse el blanco</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* seccion 7, confirmar visita */}
+       {/* seccion 7, lluvia de sobres */}
+       <div className="cardInfo">
+        <h2 className="cardInfo-poema">Mesa de Regalos</h2>
+        <img className="imgRegalo" src={imageRegalo} alt="" />
+        <div className="cardInfo-direccion">
+          <p>El mejor regalo es que nos acompañes, pero si quieres tener un detalle con nosotros, preferimos lluvia de sobres.</p>
+        </div>
+      </div>
+
+      {/* seccion 8, confirmar visita */}
       <div className="confirmarVisita">
         <h3>Confirma tu asistencia</h3>
         <p className="botonConfirmar" onClick={confirmarAsistencia}>
