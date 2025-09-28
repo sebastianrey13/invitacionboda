@@ -183,11 +183,11 @@ const Home = ({ nombre }) => {
           <div className="dressCode">
             <div>
               <p className="dressCodeMH">Mujeres</p>
-              <p className="dressCodeText">Reservarse el blanco</p>
+              <p className="dressCodeText">Evitar el blanco</p>
             </div>
             <div>
               <p className="dressCodeMH">Hombres</p>
-              <p className="dressCodeText">Reservarse el blanco</p>
+              <p className="dressCodeText">Evitar el blanco</p>
             </div>
           </div>
         </div>
